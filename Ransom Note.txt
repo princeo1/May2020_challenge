@@ -1,0 +1,28 @@
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        int r[123]={0},m[123]={0};int flag=0;
+        for(int i=0;i<ransomNote.size();i++)
+        {
+            int k=ransomNote[i];
+            r[k]++;
+        }
+        for(int i=0;i<magazine.size();i++)
+        {
+            int k=magazine[i];
+            m[k]++;
+        }
+        for(int i=97;i<=122;i++)
+        {
+            if(m[i]<r[i])
+            {
+                flag=1;
+                break;
+            }  
+        }
+        if(flag==1)
+            return false;
+        else
+            return true;
+    }
+};
