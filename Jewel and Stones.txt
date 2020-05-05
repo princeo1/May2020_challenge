@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int numJewelsInStones(string J, string S) {
+        map<char,int> m;int sum=0;
+        for(int i=0;i<S.size();i++)
+            m[S[i]]++;
+        for(auto i:m)
+        {
+            for(int k=0;k<J.size();k++)
+            {
+                if(i.first==J[k])
+                    sum=sum+i.second;
+            }
+        }
+        return sum;
+    }
+};
