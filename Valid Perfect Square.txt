@@ -1,0 +1,10 @@
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        double s=sqrt(num);
+        if(ceil(s)==floor(s))
+            return true;
+        else
+            return false;   
+    }
+};
